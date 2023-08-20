@@ -20,14 +20,16 @@ def message_TV_STATE(client, userdata, message):
 
     if mess.get("State") == True:
         print(True)
+        tv.power_on()
     elif mess.get("State") == False:
         print(False)
+        tv.standby()
 
 
 cec.init()
 
- tv = cec.Device(cec.CECDEVICE_TV)
- tv.power_on()
+tv = cec.Device(cec.CECDEVICE_TV)
+tv.power_on()
 
 
 
